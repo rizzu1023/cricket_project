@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cricket</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bcc/bootstrap.css' %}" >
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bcc/main.css' %}" >
+
+</head>
+<body>
+    <header class="site-header bg-primary">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="{% url 'bcc-home' %}">BCC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{% url 'bcc-home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'bcc-about' %}">About</a>
+              </div>
+              <!-- Navbar Right Side -->
+              <div class="navbar-nav">
+
+                <!-- <a class="nav-item nav-link" href="#">Profile</a> -->
+                <!-- <a class="nav-item nav-link" href="#">Logout</a> -->
+                <a class="nav-item nav-link" href="#">Login</a>
+                <a class="nav-item nav-link" href="#">Register</a>
+              </div>
+            </div>
+          </div>
+      </nav>
+      </header>
+      <main>
+          {% block content %}
+          {% endblock %}
+      </main>
+    
+
+ 
+</body>
+</html>
