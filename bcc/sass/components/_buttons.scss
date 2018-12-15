@@ -1,0 +1,71 @@
+.button1{
+    border: .3rem solid white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    & a{
+        text-decoration: none;
+        color:white;
+       }
+       &:hover{
+        background: white;
+        & a{
+        color: $color-darkblue;
+    }
+}
+} 
+
+  
+
+.button2{
+    padding: .8rem 2rem;
+    font-size: 1.4rem;
+    background: white;
+    border-radius:2rem;
+    & a{
+        text-decoration: none;
+        color:black;
+    }
+    &:hover{
+        background:$color-darkblue;
+        border: .2rem solid white;
+        & a{
+        color: white;
+    }
+}
+}
+
+
+.button3{
+    padding: .6rem 7rem;
+    width: 10rem;
+    font-size: 1.4rem;
+    background: $color-darkgrey;
+    border: 1px solid $color-darkgrey;
+    & a{
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    &:hover{
+        background: $color-darkblue;
+        cursor: pointer;
+    }
+}
+
+.button4 {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    & div{
+        border-radius: .5rem;
+        background: $color-darkblue;
+        width: 23rem;
+        height: 5rem;
+        line-height: 5rem;
+        box-shadow: .2rem .2rem .5rem $color-darkblue;
+    }
+  
+}
