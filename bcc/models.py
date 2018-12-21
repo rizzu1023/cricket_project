@@ -9,3 +9,12 @@ class Test(models.Model):
         return self.password          #can't return a integer value
 
 
+class Team(models.Model):
+    team_id = models.CharField(max_length=10)
+    team_name = models.CharField(max_length=40)
+    winner = models.IntegerField()
+    group_name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.team_name
+

@@ -1,0 +1,70 @@
+// teams-area start
+
+
+    .teams-area{
+        position: relative;
+        z-index: 999;
+    }
+    .teams-area-wrapper{
+        // box-shadow:0 0 10px 0 rgba(69, 69, 69, 0.24)
+        
+    }
+
+  
+    .teams-area-wrapper > a  {
+        text-decoration: none;
+        color: black;
+    }
+
+    .teams-area-content{
+        border: 1px solid $color-bg-dark;
+        height: 300px;
+        // border-radius: 5px;
+        padding: 20px 20px;
+        position: relative;
+        background: $color-bg-light;
+        
+    }
+
+    .teams-area-content:hover{
+        box-shadow:0 0 10px 0 rgba(69, 69, 69, 0.24)
+
+    }
+
+
+    .teams-area-content > h4{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .teams-area-content > p{
+        position: absolute;
+        // margin-bottom: 40px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .teams-area-content > button{
+        border: none;
+        // margin-top: 40px;
+        position: absolute;
+        left:50%;
+        bottom: 20%;
+        transform: translateX(-50%);
+        // background: $color-bg-dark;
+        border-bottom: 2px solid $color-bg-dark;
+        color: rgba(111,111,111,.8);
+        padding: 3px 13px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .teams-area-content button:hover{
+        background: rgba(111,111,111,.8);
+        color: $color-bg-light;
+        // border: .5px solid $color-bg-dark;
+        cursor: pointer;
+    }
+
+
+
+// teams-area end

@@ -1,0 +1,104 @@
+{% extends "bcc/base.html" %}
+
+
+{% block content %}
+<!-- teams-area start -->
+    <div class="teams-area">
+        <div class="container">
+            <div class="row">
+{% for i in team_name %}
+
+                <div class="col-md-3 mb-4 teams-area-wrapper">
+                    <a href="#">
+                    <div class="teams-area-content text-center bg-1">
+                        <h4>{{ i.team_name }}</h4>
+                        <p>winner : {{ i.winner }} times</p>
+                        <button>Home</button>
+
+                    </div>
+                    </a>
+                </div>
+{% endfor %}
+                <!-- <div class="col-md-3 mb-4 teams-area-wrapper">
+                    <a href="#">
+                    <div class="teams-area-content text-center bg-2">
+                        <h4>Delhi Capitals</h4>
+                        <p>Winner : 0 times</p>
+                        <button>Home</button>
+
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4 teams-area-wrapper">
+                    <a href="#">
+                    <div class="teams-area-content text-center bg-3">
+                        <h4>Royal Challengers Banglore</h4>
+                        <p>Winner : 0 times</p>
+                        <button>Home</button>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4 teams-area-wrapper">
+                    <a href="#">
+                    <div class="teams-area-content text-center bg-4">
+                        <h4>Mumbai Indians</h4>
+                        <p>Winner : 3 times</p>
+                        <button>Home</button>
+                    
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4 teams-area-wrapper">
+                        <a href="#">
+                        <div class="teams-area-content text-center bg-2">
+                            <h4>Rajasthan Royals</h4>
+                            <p>Winner : 1 time</p>
+                            <button>Home</button>
+    
+                        </div>
+                        </a>
+                </div>
+                <div class="col-md-3 mb-4 teams-area-wrapper">
+                        <a href="#">
+                        <div class="teams-area-content text-center bg-2">
+                            <h4>Kolkata Knight Riders</h4>
+                            <p>Winner : 2 times</p>
+                            <button>Home</button>
+    
+                        </div>
+                        </a>
+                </div>
+                <div class="col-md-3 mb-4 teams-area-wrapper">
+                        <a href="#">
+                        <div class="teams-area-content text-center bg-2">
+                            <h4>Kings XI Pubjab</h4>
+                            <p>Winner : 0 time</p>
+                            <button>Home</button>
+    
+                        </div>
+                        </a>
+                </div>
+                <div class="col-md-3 mb-4 teams-area-wrapper">
+                        <a href="#">
+                        <div class="teams-area-content text-center bg-2">
+                            <h4>Chennai Super Kings</h4>
+                            <p>Winner : 3 times</p>
+                            <button>Home</button>
+    
+                        </div>
+                        </a>
+                </div> -->
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+<!-- teams-area end -->
+
+ 
+
+
+
+{% endblock %}
