@@ -1,12 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Test(models.Model):
-    user_id = models.IntegerField()
-    password = models.CharField(max_length=20)   #length parameter is compulsory
-
-    def __str__(self):
-        return self.password          #can't return a integer value
 
 
 class Team(models.Model):
@@ -17,4 +11,20 @@ class Team(models.Model):
 
     def __str__(self):
         return self.team_name
+
+
+
+class points_table(models.Model):
+    team_id = models.CharField(max_length=10)
+    team_name = models.CharField(max_length=40)
+    group_name = models.CharField(max_length=10)
+    matches = models.IntegerField()
+    won = models.IntegerField()
+    lost = models.IntegerField()
+    draw = models.IntegerField()
+    pts = models.IntegerField()
+    nrr = models.IntegerField()
+
+    def __str__(self):
+        return self.team_id
 

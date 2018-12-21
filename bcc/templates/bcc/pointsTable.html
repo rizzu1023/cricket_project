@@ -2,12 +2,13 @@
 
 {% block content %}
 <!-- pointsTable-area start -->
+
 <div class="pointsTable-area laptop">
     <div class="container">
         <table class="table">
             <thead style="background:#6f6f6f;color:#f6f6f6">
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">No.</th>
                 <th scope="col">Team</th>
                 <th scope="col">Match</th>
                 <th scope="col">Won</th>
@@ -19,76 +20,59 @@
             </thead>
 
             <tbody>
-
+{% for i in points %}
               <tr>
-                <th scope="row">1</th>
-                <td>Royal Challengers Banglore</td>
-                <td>5</td>
-                <td>4</td>
-                <td>1</td>
-                <td>0</td>
-                <td>8</td>
-                <td>+.899</td>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ i.team_name }}</td>
+                <td>{{ i.matches }}</td>
+                <td>{{ i.won }}</td>
+                <td>{{ i.lost }}</td>
+                <td>{{ i.draw }}</td>
+                <td>{{ i.pts}}</td>
+                <td>{{ i.nrr }}</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Delhi Capitals</td>
-                <td>5</td>
-                <td>4</td>
-                <td>1</td>
-                <td>0</td>
-                <td>8</td>
-                <td>+.899</td>
-              </tr>
+{% endfor %}            
              
             </tbody>
           </table>
     </div>
   </div>
 
-  <div class="pointsTable-area mobile">
-    <div class="container">
-      <table class="table">
-          <thead style="background:#6f6f6f;color:#f6f6f6">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Team</th>
-              <th scope="col">M</th>
-              <th scope="col">W</th>
-              <th scope="col">L</th>
-              <th scope="col">D</th>
-              <th scope="col">Pts</th>
-              <th scope="col">NRR</th>
-            </tr>
-          </thead>
+ <div class="pointsTable-area mobile">
+    <div class="container-fluid">
+        <table class="table">
+            <thead style="background:#6f6f6f;color:#f6f6f6">
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Team</th>
+                <th scope="col">M</th>
+                <th scope="col">W</th>
+                <th scope="col">L</th>
+                <th scope="col">D</th>
+                <th scope="col">Pts</th>
+                <th scope="col">NRR</th>
+              </tr>
+            </thead>
 
-          <tbody>
-
-            <tr>
-              <th scope="row">1</th>
-              <td>Royal Challengers Banglore</td>
-              <td>5</td>
-              <td>4</td>
-              <td>1</td>
-              <td>0</td>
-              <td>8</td>
-              <td>+.899</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Delhi Capitals</td>
-              <td>5</td>
-              <td>4</td>
-              <td>1</td>
-              <td>0</td>
-              <td>8</td>
-              <td>+.899</td>
-            </tr>
-           
-          </tbody>
-        </table>
+            <tbody>
+{% for i in points %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ i.team_id }}</td>
+                <td>{{ i.matches }}</td>
+                <td>{{ i.won }}</td>
+                <td>{{ i.lost }}</td>
+                <td>{{ i.draw }}</td>
+                <td>{{ i.pts}}</td>
+                <td>{{ i.nrr }}</td>
+              </tr>
+{% endfor %}            
+             
+            </tbody>
+          </table>
+    </div>
   </div>
-</div>
+
 
 <!-- pointsTable-area end -->
 
