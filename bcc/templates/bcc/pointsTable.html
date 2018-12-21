@@ -23,7 +23,7 @@
 {% for i in points %}
               <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ i.team_name }}</td>
+                <td>{{ i.team_id.team_name }}</td>
                 <td>{{ i.matches }}</td>
                 <td>{{ i.won }}</td>
                 <td>{{ i.lost }}</td>
@@ -58,7 +58,7 @@
 {% for i in points %}
               <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ i.team_id }}</td>
+                <td>{{ i.team_id.team_id }}</td>
                 <td>{{ i.matches }}</td>
                 <td>{{ i.won }}</td>
                 <td>{{ i.lost }}</td>

@@ -10,14 +10,12 @@ class Team(models.Model):
     group_name = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.team_name
+        return self.team_id
 
 
 
 class points_table(models.Model):
-    team_id = models.CharField(max_length=10)
-    team_name = models.CharField(max_length=40)
-    group_name = models.CharField(max_length=10)
+    team_id = models.ForeignKey(Team, on_delete='CASCADE')
     matches = models.IntegerField()
     won = models.IntegerField()
     lost = models.IntegerField()
@@ -26,5 +24,5 @@ class points_table(models.Model):
     nrr = models.IntegerField()
 
     def __str__(self):
-        return self.team_id
+        return self.team_id.team_name
 
