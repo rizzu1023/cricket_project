@@ -15,7 +15,7 @@ class Team(models.Model):
 
 
 class points_table(models.Model):
-    team_id = models.ForeignKey(Team, on_delete='CASCADE')
+    team_id = models.OneToOneField(Team, on_delete='CASCADE', primary_key='True')
     matches = models.IntegerField()
     won = models.IntegerField()
     lost = models.IntegerField()
