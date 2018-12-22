@@ -7,6 +7,7 @@ urlpatterns = [
     path('teams/',views.teams, name='bcc-teams'),
     path('pointsTable/',views.pointsTable, name='bcc-pointsTable'),
     path('schedule/',views.schedule, name='bcc-schedule'),
+    path('stats/',views.stats, name='bcc-stats'),
     # path('registration/',views.registration, name='bcc-registration'),
     
 ]

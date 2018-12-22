@@ -26,15 +26,10 @@ def teams(request):
 
 
 def schedule(request):
-    return render(request,'bcc/schedule.html')
+    schedule_details = {
+        'matches' : schedule_2019.objects.all()
+    }
+    return render(request,'bcc/schedule.html', schedule_details)
 
-
-# def registration(request):
-#     if request.method == 'POST':
-#         form = registration_form(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect('bcc-home')
-#     else:
-#         form = registration_form()
-#     return render(request, 'bcc/registration.html', {'form':form})
+def stats(request):
+    return render(request, 'bcc/stats.html')
