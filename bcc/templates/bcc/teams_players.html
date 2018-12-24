@@ -1,0 +1,41 @@
+{% extends "bcc/teamsDetail.html" %}
+
+{% block detail %}
+    
+     
+ <!-- squad-area start -->
+ <div class="squad-area">
+          <div class="container p-0">
+              <table class="table table-striped">
+                  <thead style="background:#6f6f6f;color:#f6f6f6">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Player</th>
+                      <th scope="col">Role</th>
+                      <th scope="col">Team</th>
+                    </tr>
+                  </thead>
+      
+                  <tbody>
+      {% for i in team_player %}
+                    <tr>
+                      <th scope="row">{{ i.player_id }}</th>
+                      <td>{{ i.player_fname}} {{ i.player_lname}}</td>
+                      <td>{{ i.player_role }}</td>
+                      <td>{{ i.team_id.team_name }}</td>
+                    </tr>
+      {% endfor %}            
+                   
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      
+<!-- squad-area end -->
+
+
+
+
+
+
+{% endblock detail %}

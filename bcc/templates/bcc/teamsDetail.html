@@ -1,5 +1,6 @@
 {% extends "bcc/base.html" %}
 
+
 {% block content %}
      <!-- team-name-area start -->
      <div class="team-name-area ">
@@ -19,57 +20,25 @@
      </div>
      <!-- team-name-area end -->
 
-
+     <!-- team-nav-area start -->
      
-     <!-- squad-area start -->
-     <div class="squad-area">
-    <div class="container p-0">
-        <table class="table table-striped">
-            <thead style="background:#6f6f6f;color:#f6f6f6">
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Player</th>
-                <th scope="col">Role</th>
-                <th scope="col">Team</th>
-              </tr>
-            </thead>
-
-            <tbody>
-{% for i in team_player %}
-              <tr>
-                <th scope="row">{{ i.player_id }}</th>
-                <td>{{ i.player_fname}} {{ i.player_lname}}</td>
-                <td>{{ i.player_role }}</td>
-                <td>{{ i.team_id.team_name }}</td>
-              </tr>
-{% endfor %}            
-             
-            </tbody>
-          </table>
-    </div>
-  </div>
-
-  <!-- squad-area end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% endblock content %}
+     <div class="team-nav-area">
+          <div class="container">
+               <div class="team-nav-area-content">
+               <ul>
+                    {% for j in p_team_detail %}
+                    <li><a href="{% url 'team-players'  t_id=j.team_id %}">Players</a></li>
+                    <li><a href="{% url 'team-schedule' t_id=j.team_id %}">Schedule</a></li>
+                    <li><a href="{% url 'team-results' t_id=j.team_id %}">Results</a></li>
+                    <li><a href="{% url 'team-stats' t_id=j.team_id %}">Stats</a></li>
+                    {% endfor %}
+               </ul>
+               </div>
+          </div>
+     </div>
+     {% block detail %}
+       
+     {% endblock detail %}
+     
+     <!-- team-nav-area end -->
+{% endblock content %}  

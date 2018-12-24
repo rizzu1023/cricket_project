@@ -1,7 +1,7 @@
 .team-name-area{
     position: relative;
     margin-top: -24px;
-    background-image: -moz-linear-gradient(left,$color-bg-dark,$color-bg-light);
+    background-image: -moz-linear-gradient(right,$color-bg-dark,$color-bg-light);
     background-image: -webkit-linear-gradient(right,$color-bg-dark,$color-bg-light);
     
 }
@@ -15,3 +15,41 @@
     // color: white;
 
 }
+
+
+
+
+// team-nav-area start
+
+.team-nav-area{
+    position: relative;
+    z-index: 999;
+    background-image: -moz-linear-gradient(left,$color-bg-dark,$color-bg-light);
+    background-image: -webkit-linear-gradient(left,$color-bg-dark,$color-bg-light);
+    
+}
+
+.team-nav-area-content{
+    display: inline-block;
+    
+}
+
+.team-nav-area-content ul{
+    list-style: none;
+    padding: 0;
+}
+
+.team-nav-area-content ul li{
+    display: inline-block;
+}
+
+.team-nav-area-content ul li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 20px;
+
+}
+
+
+// team-nav-area end

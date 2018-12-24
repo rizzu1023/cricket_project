@@ -5,7 +5,11 @@ urlpatterns = [
     path('',views.home, name='bcc-home'),
     path('about/',views.about, name='bcc-about'),
     path('teams/',views.teams, name='bcc-teams'),
-    path('teams/<slug:t_id>/', views.teams, name='bcc-teams-with-team_id'),
+    path('teams/<slug:t_id>/players', views.teams, name='team-players'),
+    path('teams/<slug:t_id>/schedule', views.team_schedule, name='team-schedule'),
+    path('teams/<slug:t_id>/results', views.team_results, name='team-results'),
+    path('teams/<slug:t_id>/stats', views.team_stats, name='team-stats'),
+
     path('pointsTable/',views.pointsTable, name='bcc-pointsTable'),
     path('schedule/',views.schedule, name='bcc-schedule'),
     path('stats/',views.stats, name='bcc-stats'),
