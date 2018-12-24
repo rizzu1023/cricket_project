@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Team)
 admin.site.register(points_table)
 admin.site.register(schedule_2019)
+admin.site.register(player_info)

@@ -6,10 +6,10 @@
     <div class="teams-area">
         <div class="container">
             <div class="row">
-{% for i in team_name %}
+{% for i in team_details %}
 
-                <div class="col-md-3 mb-4 teams-area-wrapper">
-                    <a href="#">
+                <div class="col-md-3 mb-3 teams-area-wrapper">
+                    <a href="{% url 'bcc-teams-with-team_id' t_id=i.team_id %}">
                     <div class="teams-area-content text-center bg-1">
                         <h4>{{ i.team_name }}</h4>
                         <p>winner : {{ i.winner }} times</p>

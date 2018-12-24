@@ -1,17 +1,47 @@
 {% extends "bcc/base.html" %}
 
 {% block content %}
-        <div class="schedule-area">
-    <div class="container-fluid">
-        <table class="table table-striped">
+<div class="schedule-area laptop">
+  <div class="container">
+      <table class="table table-striped table-responsive-xs table-xs">
+          <thead style="background:#6f6f6f;color:#f6f6f6">
+            <tr>
+              <th scope="col">Match</th>
+              <th scope="col">Team</th>
+              <th scope="col">vs</th>
+              <th scope="col">Team</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+
+          <tbody>
+{% for i in matches %}
+             <tr>
+              <th scope="row">{{ i.match_id }}</th>
+              <td>{{ i.team_1 }}</td>
+              <td>vs</td>
+              <td>{{ i.team_2 }}</td>
+              <td>{{ i.dates|date:'d-m'}}</td>
+              <td>{{ i.times }}</td>
+            </tr>
+{% endfor %}
+          </tbody>
+        </table>
+  </div>
+</div>
+
+  <div class="schedule-area mobile">
+    <div class="container-fluid p-0">
+        <table class="table table-striped table-responsive-xs table-xs">
             <thead style="background:#6f6f6f;color:#f6f6f6">
               <tr>
-                <th scope="col">M_no</th>
-                <th scope="col">Team</th>
+                <th scope="col">M</th>
+                <th scope="col">T</th>
                 <th scope="col">vs</th>
-                <th scope="col">Team</th>
-                <th scope="col">Time</th>
-                <th scope="col">Date</th>
+                <th scope="col">T</th>
+                <th scope="col">D</th>
+                <th scope="col">T</th>
               </tr>
             </thead>
 
@@ -22,28 +52,10 @@
                 <td>{{ i.team_1 }}</td>
                 <td>vs</td>
                 <td>{{ i.team_2 }}</td>
-                <td>{{ i.dates }}</td>
+                <td>{{ i.dates|date:'d-m'}}</td>
                 <td>{{ i.times }}</td>
               </tr>
 {% endfor %}
-              <!-- <tr>
-                <th scope="row">1</th>
-                <td>RCB</td>
-                <td>vs</td>
-                <td>SRH</td>
-                <td>12-10-2019</td>
-                <td>4:00 PM</td>
-              </tr>
-
-              <tr>
-                <th scope="row">1</th>
-                <td>RCB</td>
-                <td>vs</td>
-                <td>SRH</td>
-                <td>12-10-2019</td>
-                <td>4:00 PM</td>
-              </tr> -->
-             
             </tbody>
           </table>
     </div>

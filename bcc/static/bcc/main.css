@@ -57,6 +57,9 @@ ul {
 .teams-area-content {
   border: 1px solid #6f6f6f;
   height: 300px;
+  margin-right: -7px;
+  margin-left: -7px;
+  border-radius: 3px;
   padding: 20px 20px;
   position: relative;
   background: #f6f6f6;
@@ -109,6 +112,21 @@ ul {
   .mobile {
     display: block;
   }
+}
+.team-name-area {
+  position: relative;
+  margin-top: -24px;
+  background-image: -moz-linear-gradient(left, #6f6f6f, #f6f6f6);
+  background-image: -webkit-linear-gradient(right, #6f6f6f, #f6f6f6);
+}
+
+.team-name-area-content {
+  padding: 20px 5px;
+}
+
+.team-name-area-content h2 {
+  font-size: 30px;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */

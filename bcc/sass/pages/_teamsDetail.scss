@@ -1,0 +1,17 @@
+.team-name-area{
+    position: relative;
+    margin-top: -24px;
+    background-image: -moz-linear-gradient(left,$color-bg-dark,$color-bg-light);
+    background-image: -webkit-linear-gradient(right,$color-bg-dark,$color-bg-light);
+    
+}
+
+.team-name-area-content{
+    padding: 20px 5px;
+}
+.team-name-area-content h2{
+    font-size: 30px;
+    font-weight: 500;
+    // color: white;
+
+}

@@ -18,11 +18,19 @@ def pointsTable(request):
     return render(request, 'bcc/pointsTable.html', team)
     
     
-def teams(request):
-    team_details = {
-        'team_name' : Team.objects.all()
-    }
-    return render(request, 'bcc/teams.html', team_details)
+def teams(request, t_id="default_Team"):
+    if t_id=="default_Team":
+        context = {
+            'team_details' : Team.objects.all(),
+        }
+        return render(request, 'bcc/teams.html', context)
+    else:
+        context = {
+            'p_team_detail': Team.objects.all().filter(team_id=t_id),
+            'team_player': player_info.objects.filter(team_id__team_id=t_id),
+        }
+        return render(request, 'bcc/teamsDetail.html',context)
+
 
 
 def schedule(request):
@@ -33,3 +41,4 @@ def schedule(request):
 
 def stats(request):
     return render(request, 'bcc/stats.html')
+
