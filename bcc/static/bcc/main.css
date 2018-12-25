@@ -14,7 +14,7 @@ ul {
 }
 
 .bg-steel {
-  background-color: #6f6f6f;
+  background-color: #354475;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -40,7 +40,7 @@ ul {
 }
 
 .teams-area-content {
-  border: 1px solid #6f6f6f;
+  border: 1px solid #354475;
   height: 300px;
   margin-right: -7px;
   margin-left: -7px;
@@ -72,7 +72,7 @@ ul {
   left: 50%;
   bottom: 20%;
   transform: translateX(-50%);
-  border-bottom: 2px solid #6f6f6f;
+  border-bottom: 2px solid #354475;
   color: rgba(111, 111, 111, 0.8);
   padding: 3px 13px;
   font-size: 18px;
@@ -98,11 +98,16 @@ ul {
     display: block;
   }
 }
+thead {
+  background: #354475;
+  color: #f6f6f6;
+}
+
 .team-name-area {
   position: relative;
   margin-top: -24px;
-  background-image: -moz-linear-gradient(right, #6f6f6f, #f6f6f6);
-  background-image: -webkit-linear-gradient(right, #6f6f6f, #f6f6f6);
+  background-image: -moz-linear-gradient(right, #354475, #f6f6f6);
+  background-image: -webkit-linear-gradient(right, #354475, #f6f6f6);
 }
 
 .team-name-area-content {
@@ -117,8 +122,8 @@ ul {
 .team-nav-area {
   position: relative;
   z-index: 999;
-  background-image: -moz-linear-gradient(left, #6f6f6f, #f6f6f6);
-  background-image: -webkit-linear-gradient(left, #6f6f6f, #f6f6f6);
+  background-image: -moz-linear-gradient(left, #354475, #f6f6f6);
+  background-image: -webkit-linear-gradient(left, #354475, #f6f6f6);
 }
 
 .team-nav-area-content {
@@ -139,6 +144,13 @@ ul {
   color: white;
   display: block;
   padding: 20px;
+}
+
+@media (max-width: 520px) {
+  .team-nav-area-content ul li a {
+    padding: 15px 10px;
+    border-right: 1px solid white;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

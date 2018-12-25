@@ -1,3 +1,8 @@
+thead{
+    background: $color-bg-dark;
+    color: $color-bg-light;
+}
+
 .team-name-area{
     position: relative;
     margin-top: -24px;
@@ -51,5 +56,16 @@
 
 }
 
+
+@media (max-width:520px){
+   
+    .team-nav-area-content ul li a{
+        padding: 15px 10px;
+        // background: orange;
+        border-right: 1px solid white; 
+    }
+
+    
+}
 
 // team-nav-area end

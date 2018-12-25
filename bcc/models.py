@@ -49,7 +49,7 @@ class player_info(models.Model):
         (BT, "BATSMAN"),
         (BW, "BOWLER"),
         (WK, "WICKET-KEEPER"),
-        (AR, "ALL-ROUNDER")
+        (AR, "ALL-ROUNDER"),
     )
     player_id = models.CharField(primary_key="True", max_length=10)
     player_image = models.ImageField(default='default.jpg', upload_to='profile_pics')
@@ -80,10 +80,11 @@ class batting(models.Model):
 
 class bowling(models.Model):
     player_id = models.OneToOneField(player_info, on_delete='models.CASCADE')
+    Bw_matches = models.IntegerField(default=0)
+    Bw_innings = models.IntegerField(default=0)
     Bw_runs = models.IntegerField(default=0)
     Bw_balls = models.IntegerField(default=0)
-    Bw_innings = models.IntegerField(default=0)
-    Bt_wicket = models.IntegerField(default=0)
+    Bw_wickets = models.IntegerField(default=0)
 
     def __str__(self):
         return "{}".format(self.player_id)

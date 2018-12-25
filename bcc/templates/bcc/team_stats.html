@@ -3,6 +3,72 @@
 
 {% block detail %}
    <div class="container">
-    <h2>comming soon</h2>
+    <div class="stats-batting-area">
+          <div class="container p-0">
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Player</th>
+                      <th scope="col">Matches</th>
+                      <th scope="col">Innings</th>
+                      <th scope="col">Runs</th>
+                      <th scope="col">Balls</th>
+                      <th scope="col">Fours</th>
+                    </tr>
+                  </thead>
+      
+                  <tbody>
+      {% for i in team_stats_batting %}
+                    <tr>
+                      <th>{{ i.player_id.player_id }}</th>
+                      <td>{{ i.player_id.player_fname }} {{ i.player_id.player_lname }}</td>
+                      <td>{{ i.Bt_matches }}</td>
+                      <td>{{ i.Bt_innings }}</td>
+                      <td>{{ i.Bt_runs }}</td>
+                      <td>{{ i.Bt_balls }}</td>
+                      <td>{{ i.Bt_fours }}</td>
+                    </tr>
+      {% endfor %}            
+                   
+                  </tbody>
+                </table>
+          </div>
+        </div>
 </div>
-{% endblock detail %}
+
+<div class="container">
+    <div class="stats-batting-area">
+          <div class="container p-0">
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Player</th>
+                      <th scope="col">Matches</th>
+                      <th scope="col">Innings</th>
+                      <th scope="col">Runs</th>
+                      <th scope="col">Balls</th>
+                      <th scope="col">Wickets</th>
+                    </tr>
+                  </thead>
+      
+                  <tbody>
+      {% for i in team_stats_bowling %}
+                    <tr>
+                      <th>{{ i.player_id.player_id }}</th>
+                      <td>{{ i.player_id.player_fname }} {{ i.player_id.player_lname }}</td>
+                      <td>{{ i.Bw_matches }}</td>
+                      <td>{{ i.Bw_innings }}</td>
+                      <td>{{ i.Bw_runs }}</td>
+                      <td>{{ i.Bw_balls }}</td>
+                      <td>{{ i.Bw_wickets }}</td>
+                    </tr>
+      {% endfor %}            
+                   
+                  </tbody>
+                </table>
+          </div>
+        </div>
+</div>
+{% endblock detail %} 

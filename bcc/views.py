@@ -76,12 +76,16 @@ def team_results(request, t_id="default_Team"):
 
 
 def team_stats(request, t_id="default_Team"):
+    # player_id='RH45'
     if t_id=="default_Team":
         return render(request, 'bcc/home.html')
     else:
         context = {
             'p_team_detail': Team.objects.all().filter(team_id=t_id),
             'team_player': player_info.objects.filter(team_id__team_id=t_id),
+            'team_stats_batting' : batting.objects.filter(player_id__team_id__team_id=t_id).order_by('-Bt_runs'),
+            'team_stats_bowling' : bowling.objects.filter(player_id__team_id__team_id=t_id).order_by('-Bw_wickets'),
+
         }
         return render(request, 'bcc/team_stats.html', context)
 
