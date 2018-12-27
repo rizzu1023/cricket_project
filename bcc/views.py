@@ -13,6 +13,14 @@ def about(request):
     return render(request, 'bcc/about.html')
 
 
+def stats(request, stats_type='most-runs'):
+    context = {
+        'players' : batting.objects.all().order_by('-Bt_runs'),
+        'stats_type' : stats_type,   
+    }
+    return render(request, 'bcc/stats.html',context)
+
+
 
 
 def pointsTable(request):
@@ -55,7 +63,7 @@ def team_schedule(request, t_id="default_Team"):
             # 'team_player': player_info.objects.filter(team_id__team_id=t_id),
             't_schedule1' : schedule_2019.objects.filter(team_1__team_id=t_id),
             't_schedule2' : schedule_2019.objects.filter(team_2__team_id=t_id),
-
+            
         }
         return render(request, 'bcc/team_schedule.html',context)
    
@@ -100,6 +108,5 @@ def schedule(request):
     }
     return render(request,'bcc/schedule.html', schedule_details)
 
-def stats(request):
-    return render(request, 'bcc/stats.html')
+
 

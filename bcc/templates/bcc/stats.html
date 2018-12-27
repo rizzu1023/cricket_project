@@ -1,7 +1,139 @@
 {% extends "bcc/base.html" %}
 
 {% block content %}
-<div class="container">
-    <h4>Stats page</h4>
+
+<!-- stats-header-area start -->
+<div class="stats-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="stats-header-area-content">
+                    <h3>Statistic</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- stats-header-area end -->
+
+
+
+
+<!-- stats-side-navbar start -->
+    <nav class="stats-side-navbar">
+        <div class="stats-side-navbar-content">
+        <h4>Leaders</h4>
+        <ul>
+            <li><h5>Batting</h5></li>
+            <li><a href="{% url 'bcc-stats' stats_type='most-runs' %}">Most Runs</a></li>
+            <li><a href="#">Most Runs(Over)</a></li>
+            <li><a href="{% url 'bcc-stats' stats_type='most-fours' %}">Most Fours</a></li>
+            <li><a href="#">Most Sixes</a></li>
+            <li><a href="#">Most Fifties</a></li>
+            <li><a href="#">Fastest Fifties</a></li>
+            <li><a href="#">Highest Score</a></li>
+            
+            <li><h5>Bowling</h5></li>
+            <li><a href="#">Most Wicket</a></li>
+            <li><a href="#">Best Bowling Economy</a></li>
+            <li><a href="#">Best Bowling Average</a></li>
+            <li><a href="#">Best Bowling Strike Rate(Inning)</a></li>
+            <li><a href="#">Most Hat Tricks</a></li>
+            <li><a href="#">Most Four Wickets</a></li>
+            <li><a href="#">Most Runs Concedede(Inning)</a></li>
+            <li><a href="#">Best Bowling Inning</a></li>
+        </ul>
+    </div>
+
+
+
+    </nav>
+<!-- stats-side-navbar start -->
+
+
+
+
+
+<!-- stats-main-area start -->
+{% ifequal stats_type 'most-runs' %}
+
+<div class="stats-main-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="stats-main-area-content">
+                        <div class="stats-main-area-content-header">
+                            <h3>Most Runs</h3>
+                        </div>
+                        
+                        <div class="stats-main-area-content-table">
+                            
+                                    <table class="table table-striped table-sm">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">POS</th>
+                                            <th scope="col">PLAYER</th>
+                                            <th scope="col">Mat</th>
+                                            <th scope="col">Inns</th>
+                                            <th scope="col">NO</th>
+                                            <th scope="col">Runs</th>
+                                            <th scope="col">HS</th>
+                                            <th scope="col">BF</th>
+                                            <th scope="col">SR</th>
+                                            <th scope="col">100</th>
+                                            <th scope="col">50</th>
+                                            <th scope="col">4s</th>
+                                            <th scope="col">6s</th>
+                                          </tr>
+                                        </thead>
+                              
+                                        <tbody>
+                    {% for k in players %}
+                                           <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <th>{{k.player_id.player_fname}} {{k.player_id.player_lname}} ({{ k.player_id.team_id }})</th>
+                                            <td>{{ k.Bt_matches }}</td>
+                                            <td>{{ k.Bt_innings }}</td>
+                                            <td>0</td>
+                                            <th>{{ k.Bt_runs }}</th>
+                                            <td>0</td>
+                                            <td>{{ k.Bt_balls}}</td>
+                                            <td>142.3</td>
+                                            <td>0</td>
+                                            <td>2</td>
+                                            <td>{{ k.Bt_fours }}</td>
+                                            <td>{{ k.Bt_fours }}</td>
+                                          </tr>
+                    {% endfor %}
+                                        </tbody>
+                                      </table>
+                            
+                              </div>
+                              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endifequal %}
+<!-- stats-main-area end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock content %}  

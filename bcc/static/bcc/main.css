@@ -152,5 +152,83 @@ thead {
     border-right: 1px solid white;
   }
 }
+.stats-header-area {
+  position: relative;
+  z-index: 999;
+  background-image: -moz-linear-gradient(left, #354475, #f6f6f6);
+  background-image: -webkit-linear-gradient(left, #354475, #f6f6f6);
+  padding: 25px 0;
+  top: -24px;
+}
+
+.stats-header-area-content h3 {
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+.stats-side-navbar {
+  position: relative;
+  z-index: 999;
+  display: inline-block;
+}
+
+.stats-side-navbar-content h4 {
+  padding: 0px 14px;
+  font-size: 17px;
+}
+
+.stats-side-navbar-content ul {
+  list-style: none;
+  background: #e7e7e7;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-side-navbar-content ul li {
+  margin: 0;
+  padding: 5px 14px;
+}
+
+.stats-side-navbar-content ul li h5 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+}
+
+.stats-side-navbar-content ul li a {
+  font-size: 12px;
+  color: black;
+  display: block;
+  padding: 3px 0px;
+  text-decoration: none;
+}
+
+.stats-side-navbar-content ul li:nth-child(1) {
+  background: #354475;
+  padding: 10px 14px;
+}
+
+.stats-side-navbar-content ul li:nth-child(9) {
+  background: #354475;
+  padding: 10px 14px;
+}
+
+.stats-main-area {
+  position: relative;
+  z-index: 997;
+  display: inline-block;
+  top: -570px;
+  width: 80%;
+}
+
+.stats-main-area-content-header h3 {
+  padding: 10px 20px;
+}
+
+.stats-main-area-content table tbody {
+  font-size: 12px;
+}
 
 /*# sourceMappingURL=main.css.map */

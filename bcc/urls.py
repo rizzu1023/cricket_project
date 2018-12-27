@@ -13,6 +13,7 @@ urlpatterns = [
     path('pointsTable/',views.pointsTable, name='bcc-pointsTable'),
     path('schedule/',views.schedule, name='bcc-schedule'),
     path('stats/',views.stats, name='bcc-stats'),
+    path('stats/<slug:stats_type>',views.stats, name='bcc-stats'),
     # path('teams/detail/',views.teams_detail, name='teams-detail'),
 
     # path('registration/',views.registration, name='bcc-registration'),

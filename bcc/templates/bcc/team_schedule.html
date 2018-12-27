@@ -15,13 +15,12 @@
               <th scope="col">Time</th>
             </tr>
           </thead>
-
-          <tbody>
+      <tbody>
 {% for i in t_schedule1 %}
-             <tr>
+              <tr>
               <th scope="row">{{ i.match_id }}</th>
               <td>{{ i.team_1 }}</td>
-              <td>vs</td>
+              <td>{{ t_id }}</td>
               <td>{{ i.team_2 }}</td>
               <td>{{ i.dates|date:'d-m'}}</td>
               <td>{{ i.times }}</td>
