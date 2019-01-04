@@ -72,7 +72,8 @@
                                     <table class="table table-striped table-sm">
                                         <thead>
                                           <tr>
-                                            <th scope="col">POS</th>
+                                            <th scope="col">P</th>
+                                            <th scope="col">T</th>
                                             <th scope="col">PLAYER</th>
                                             <th scope="col">Mat</th>
                                             <th scope="col">Inns</th>
@@ -92,7 +93,8 @@
                     {% for k in players %}
                                            <tr>
                                             <th scope="row">{{ forloop.counter }}</th>
-                                            <th>{{k.player_id.player_fname}} {{k.player_id.player_lname}} ({{ k.player_id.team_id }})</th>
+                                            <th scope="row">{{ k.player_id.team_id }}</th>
+                                            <th>{{k.player_id.player_fname}} {{k.player_id.player_lname}}</th>
                                             <td>{{ k.Bt_matches }}</td>
                                             <td>{{ k.Bt_innings }}</td>
                                             <td>0</td>

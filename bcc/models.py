@@ -15,12 +15,12 @@ class Team(models.Model):
 
 class points_table(models.Model):
     team_id = models.OneToOneField(Team, on_delete='CASCADE', primary_key='True')
-    matches = models.IntegerField()
-    won = models.IntegerField()
-    lost = models.IntegerField()
-    draw = models.IntegerField()
-    pts = models.IntegerField()
-    nrr = models.IntegerField()
+    matches = models.IntegerField(default=0)
+    won = models.IntegerField(default=0)
+    lost = models.IntegerField(default=0)
+    draw = models.IntegerField(default=0)
+    pts = models.IntegerField(default=0)
+    nrr = models.IntegerField(default=0)
 
     def __str__(self):
         return self.team_id.team_name
@@ -96,3 +96,9 @@ def create_player_objects(sender, **kwargs):
         player_bowling = bowling.objects.create(player_id=kwargs['instance'])
 
 post_save.connect(create_player_objects, sender=player_info)
+
+def create_points_table(sender, **kwargs):
+    if kwargs['created']:
+        team_points_table = points_table.objects.create(team_id=kwargs['instance'])
+
+post_save.connect(create_points_table, sender=Team) 
