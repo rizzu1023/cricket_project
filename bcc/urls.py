@@ -18,4 +18,4 @@ urlpatterns = [
 
     # path('registration/',views.registration, name='bcc-registration'),
     
-]
+] 

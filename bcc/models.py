@@ -1,5 +1,6 @@
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete, pre_delete
+from django.dispatch import receiver
 # Create your models here.
 
 
@@ -16,7 +17,7 @@ class Team(models.Model):
 class points_table(models.Model):
     team_id = models.OneToOneField(Team, on_delete='CASCADE', primary_key='True')
     matches = models.IntegerField(default=0)
-    won = models.IntegerField(default=0)
+    won = models.IntegerField(default=0) 
     lost = models.IntegerField(default=0)
     draw = models.IntegerField(default=0)
     pts = models.IntegerField(default=0)
@@ -89,16 +90,18 @@ class bowling(models.Model):
     def __str__(self):
         return "{}".format(self.player_id)
 
-
+@receiver(post_save, sender=player_info)
 def create_player_objects(sender, **kwargs):
     if kwargs['created']:
         player_batting = batting.objects.create(player_id=kwargs['instance'])
         player_bowling = bowling.objects.create(player_id=kwargs['instance'])
+# post_save.connect(create_player_objects, sender=player_info)
 
-post_save.connect(create_player_objects, sender=player_info)
 
 def create_points_table(sender, **kwargs):
     if kwargs['created']:
         team_points_table = points_table.objects.create(team_id=kwargs['instance'])
-
 post_save.connect(create_points_table, sender=Team) 
+
+
+
