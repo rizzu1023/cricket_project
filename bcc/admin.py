@@ -9,3 +9,6 @@ admin.site.register(schedule_2019)
 admin.site.register(batting)
 admin.site.register(bowling)
 admin.site.register(player_info)
+
+admin.site.register(playing_XI)
+

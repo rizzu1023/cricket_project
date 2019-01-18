@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save, post_delete, pre_delete
 from django.dispatch import receiver
+from multiselectfield import MultiSelectField
 # Create your models here.
 
 
@@ -39,6 +40,8 @@ class schedule_2019(models.Model):
 
     def __str__(self):
         return f"{self.team_1.team_name +' vs '+ self.team_2.team_name}"
+
+
 
 
 class player_info(models.Model):
@@ -104,4 +107,13 @@ def create_points_table(sender, **kwargs):
 post_save.connect(create_points_table, sender=Team) 
 
 
+
+class playing_XI(models.Model):
+    palyer_choices = (
+        ('VK', 'Virat Kohli'),
+        ('ST', 'Sachin'),
+        ('RS', 'Rohit Sharma'),
+        ('MS', 'Mohammed Shami'),
+    )
+    players = MultiSelectField(choices = palyer_choices, max_choices=2)
 
