@@ -13,7 +13,7 @@ class Team(models.Model):
 
     def __str__(self):
         return self.team_id
-
+ 
 
 class points_table(models.Model):
     team_id = models.OneToOneField(Team, on_delete='CASCADE', primary_key='True')
